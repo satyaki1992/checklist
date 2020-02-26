@@ -20,11 +20,11 @@ To package/build/compile the project, we open a terminal:
 saty@tech:~/root-of-your-project$ mvn clean install
 ```
 
-1. <b>Web Server deployment</b> <br/>
-Deploy your war file in a web/application server like Apache Tomcat. 
-Run jar file : java -jar <path to jar file>
+##### 1. Web Server deployment
+Deploy your war file in a web/application server like Apache Tomcat. <br/>
+Run jar file : java -jar </path to jar file>
 
-2. <b>Docker</b> <br/>
+##### 2. Docker
 
 <i>create a docker image</i> :-
 ```console
