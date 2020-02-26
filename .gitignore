@@ -1,6 +1,7 @@
 HELP.md
 target/
 .mvn
+docker
 
 ### STS ###
 .apt_generated

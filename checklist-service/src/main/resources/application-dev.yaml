@@ -1,0 +1,10 @@
+#Local MongoDB config
+spring:
+  data:
+    mongodb:
+      authentication-database: admin
+      username: adminIsHere
+      password: secret
+      database: checklist
+      port: 27017
+      host: 172.17.0.2
