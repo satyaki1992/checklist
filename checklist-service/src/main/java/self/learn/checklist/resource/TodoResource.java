@@ -1,4 +1,4 @@
-package self.learn.checklist.controller;
+package self.learn.checklist.resource;
 
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -10,23 +10,19 @@ import self.learn.checklist.service.ChecklistService;
 import javax.validation.Valid;
 import java.util.List;
 
-/**
- * The endpoints for basic operation of a to-do app
- */
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api")
-public class ChecklistController {
-	
+@RequestMapping("/api/todo")
+public class TodoResource {
 	private ChecklistService checklistService;
 	
-	@GetMapping("/getAllTodos")
+	@GetMapping("/all")
 	public ResponseEntity<List<ChecklistCreationDto>> getAllTodos() {
-		return new ResponseEntity<List<ChecklistCreationDto>>(checklistService.getAllTasks(), HttpStatus.OK);
+		return new ResponseEntity<>(checklistService.getAllTasks(), HttpStatus.OK);
 	}
 	
-	@PostMapping("/createTodo")
+	@PostMapping
 	public ResponseEntity<ChecklistCreationDto> createTodo(@Valid @RequestBody final ChecklistCreationDto checklistCreationDto) {
-		return new ResponseEntity<ChecklistCreationDto>(checklistService.createTodo(checklistCreationDto), HttpStatus.OK);
+		return new ResponseEntity<>(checklistService.createTodo(checklistCreationDto), HttpStatus.CREATED);
 	}
 }
